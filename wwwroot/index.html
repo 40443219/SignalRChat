@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignalR Chat</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css" />
+</head>
+<body class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 text-center h3">
+            SignalR Chat
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <label for="userList">在線成員</label>
+            <div id="userList" class="form-control w-100 h-auto" style="min-height: 25rem;" multiple readonly>
+            </div>
+        </div>
+        <div class="col-md-4 offset-md-1">
+            <label for="name col-form-label">姓名</label>
+            <input class="form-control" type="text" id="name">
+
+            <label for="group">群組列表</label>
+            <select class="form-control" id="group">
+                <option>公開</option>
+                <option>私密</option>
+            </select>
+            <button class="form-control btn btn-primary" id="connectionStartBtn">連線</button>
+
+            <!-- <button id="addGroupBtn">加入群組</button>-->
+            <label for="msg">訊息</label>
+            <input class="form-control" type="text" id="msg" disabled>
+
+            <div class="input-group">
+                <button class="btn btn-success form-control" id="submitBtn" disabled>送出（所有人）</button>
+                <button class="btn btn-danger form-control" id="submitGroupBtn" disabled>送出（群組）</button>
+            </div>
+            <div id="msgDiv" class="form-control h-auto" style="min-height: 10rem;"></div>
+        </div>
+    </div>
+
+    <script src="lib/signalr/signalr.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
